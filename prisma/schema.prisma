@@ -1,0 +1,73 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Comics {
+  id        Int    @id @default(autoincrement())
+  title     String
+  author    String
+  publisher String
+  year      Int
+  summary   String
+  cover     String
+  price     Float
+  quantity  Int
+  rarity    String
+
+  orders Orders[]
+
+  @@map("comics")
+}
+
+model Users {
+  id          Int    @id @default(autoincrement())
+  name        String
+  email       String @unique
+  password    String
+  role        String @default("USER")
+  preferences String
+
+  @@map("users")
+}
+
+model Coupons {
+  id       Int      @id @default(autoincrement())
+  code     String   @unique
+  discount Float
+  expires  DateTime
+  rarity   String
+
+  @@map("coupons")
+}
+
+model Orders {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  couponId  String?
+  total     Float
+  status    String   @default("PENDING")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  comics Comics[]
+
+  @@map("orders")
+}
+
+// model OrderItems {
+//   item    Comics @relation(fields: [itemId], references: [id])
+//   itemId  Int
+//   order   Orders @relation(fields: [orderId], references: [id])
+//   orderId Int
+
+//   @@id([itemId, orderId])
+//   @@map("order_items")
+// }
