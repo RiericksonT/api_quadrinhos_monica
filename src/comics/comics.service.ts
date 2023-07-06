@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { CreateComicDto } from './dto/create-comic.dto';
 import { UpdateComicDto } from './dto/update-comic.dto';
-import { PrismaService } from 'src/database/prisma.service';
+import { PrismaService } from '../../src/database/prisma.service';
 import { ComicsRepository } from 'src/repositories/comicsReository';
 
 @Injectable()

@@ -12,7 +12,7 @@
 
 A API de Quadrinhos da Turma da Mônica é uma interface de programação de aplicações (API) que permite o gerenciamento de quadrinhos e usuários relacionados ao universo da Turma da Mônica. Essa API oferece operações de CRUD (Create, Read, Update, Delete) para quadrinhos e usuários, permitindo que desenvolvedores criem aplicativos, sites ou serviços com funcionalidades de cadastro, visualização, atualização e exclusão de quadrinhos e usuários.
 
-documentação: /docs
+para mais detalhes acessar a rota documentação: /docs
 
 ## Tecnologias
 
@@ -37,9 +37,11 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Teste
+## Teste 
 
 ```bash
+########## Testes não totalmente implementados ##########
+
 # unit tests
 $ npm run test
 
