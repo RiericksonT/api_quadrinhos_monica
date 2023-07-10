@@ -20,10 +20,11 @@ import {
   ApiBadRequestResponse,
   ApiBearerAuth,
 } from '@nestjs/swagger';
-import { JwTAuthGuard } from '../../src/auth/jwt-auth/jwt-auth.guard';
-import { Role } from '../../src/auth/roles-authorization/roles.enum';
-import { Roles } from '../../src/auth/roles-authorization/roles.decorator';
+
+import { Role } from 'src/auth/roles-authorization/roles.enum';
+import { Roles } from 'src/auth/roles-authorization/roles.decorator';
 import { Comic } from './entities/comic.entity';
+import { JwTAuthGuard } from 'src/auth/jwt-auth/jwt-auth.guard';
 
 @ApiTags('comics')
 @Controller('comics')
